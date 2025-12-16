@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Account • Sprout Haven</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Minimal CSS for account form */
+      .form-container {
+        background: #fff;
+        width: 300px;
+        height: 400px;
+        position: relative;
+        text-align: center;
+        padding: 20px 0;
+        margin: auto;
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        border-radius: 10px;
+      }
+      .form-btn {
+        display: inline-block;
+        cursor: pointer;
+        width: 130px;
+        font-weight: bold;
+        padding: 10px 0;
+        color: #555;
+        border: none;
+        background: none;
+        transition: color 0.5s;
+      }
+      .form-btn.active {
+        color: #ff523b;
+      }
+      .form-container form {
+        max-width: 300px;
+        padding: 0 20px;
+        position: absolute;
+        top: 100px;
+        transition: transform 1s;
+      }
+      #LoginForm {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      #RegForm {
+        left: 100%;
+      } /* Initially off-screen */
+      .form-container form input {
+        width: 100%;
+        height: 40px;
+        margin: 10px 0;
+        padding: 0 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .form-container form .btn {
+        width: 100%;
+        border: none;
+        cursor: pointer;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">...</div>
+      </div>
+    </div>
+
+    <div class="account-page" style="padding: 50px 0">
+      <div class="container">
+        <div class="row">
+          <div class="col-2">
+            <img
+              src="pexels-aldoazdesign-1621168.jpg"
+              alt="Plants"
+              width="100%"
+            />
+          </div>
+
+          <div class="col-2">
+            <div class="form-container">
+              <div class="form-toggle">
+                <button class="form-btn active" onclick="login()">Login</button>
+                <button class="form-btn" onclick="register()">Register</button>
+              </div>
+
+              <form id="LoginForm" action="login.php" method="POST">
+                <input type="email" name="email" placeholder="Email" required />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  required
+                />
+                <button type="submit" class="btn">Login</button>
+                <a href="#">Forgot Password</a>
+              </form>
+
+              <form id="RegForm" action="register.php" method="POST">
+                <input type="text" name="name" placeholder="Name" required />
+                <input type="email" name="email" placeholder="Email" required />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  required
+                />
+                <input type="hidden" name="role" value="customer" />
+                <button type="submit" class="btn">Register</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">...</div>
+
+    <script>
+      var LoginForm = document.getElementById("LoginForm");
+      var RegForm = document.getElementById("RegForm");
+      var LoginBtn = document.querySelector(".form-toggle button:first-child");
+      var RegBtn = document.querySelector(".form-toggle button:last-child");
+
+      function register() {
+        LoginForm.style.transform = "translateX(-150%)";
+        RegForm.style.transform = "translateX(-100%)";
+        LoginBtn.classList.remove("active");
+        RegBtn.classList.add("active");
+      }
+
+      function login() {
+        LoginForm.style.transform = "translateX(-50%)";
+        RegForm.style.transform = "translateX(0)";
+        LoginBtn.classList.add("active");
+        RegBtn.classList.remove("active");
+      }
+    </script>
+  </body>
+</html>

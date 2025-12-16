@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details • Sprout Haven</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/font-awesome-4@4.7.4/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom styles for product detail */
+      .product-detail .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 50px; /* spacing between image and text */
+      }
+
+      .product-detail .col-2 {
+        flex-basis: 45%;
+        min-width: 300px;
+      }
+
+      .product-detail img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .product-detail .btn {
+        padding: 10px 35px;
+        font-size: 16px;
+      }
+
+      .product-detail input[type="number"] {
+        width: 60px;
+        padding: 5px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .product-detail .row {
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .product-detail .col-2 {
+          flex-basis: 100%;
+        }
+      }
+
+      .product-detail .rating .fa {
+        color: #ff523b;
+        margin-right: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <img src="Logo.png" alt="logo" width="120px" />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Products</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="account.html">Account</a></li>
+              <li>
+                <a href="cart.php" class="cart-link">
+                  <img src="Cart-icon.png" alt="Cart" width="30" height="30" />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT DETAIL -->
+    <div class="small-container product-detail" style="padding: 60px 0">
+      <div class="row">
+        <!-- Product Image -->
+        <div class="col-2">
+          <img src="images/14.png" alt="Rosa Fragrant Cloud" />
+        </div>
+
+        <!-- Product Info -->
+        <div class="col-2">
+          <h1>Rosa Fragrant Cloud</h1>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <h2>₱550.00</h2>
+          <p>
+            Vermilion fragrant rose, highly aromatic and perfect for gardens and
+            bouquets.
+          </p>
+
+          <form action="cart.php" method="post">
+            <label for="quantity">Quantity:</label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              value="1"
+              min="1"
+            />
+            <input type="hidden" name="product_id" value="8" />
+
+            <button type="submit" name="add_to_cart" class="btn">
+              Add to Cart →
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- PRODUCT DESCRIPTION SECTION -->
+      <div style="margin-top: 50px">
+        <h2 class="title">Product Details</h2>
+        <p>
+          - Color: Vermilion<br />
+          - Height: 30-40 cm<br />
+          - Flowering Season: Spring-Summer<br />
+          - Care: Full sun, moderate watering, well-drained soil
+        </p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download our app for Android and IOS mobile phone.</p>
+            <div class="app-logo">
+              <img src="googleplay.png" />
+              <img src="app-store.png" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="Logo.png" alt="Logo" />
+            <p>Our purpose is to encourage others to try gardening.</p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+              </li>
+              <li>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+              </li>
+              <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p class="copyright">Copyright 2025 - Sprout Haven</p>
+      </div>
+    </div>
+  </body>
+</html>
